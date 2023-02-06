@@ -11,7 +11,7 @@ def recommendation(event, context):
               'statusCode': 400,
               'body': {}
         }
-        page = event.get("queryStringParameters", {}).get("p", 1)
+        page = int(event.get("queryStringParameters", {}).get("p", 1))
         per_page = 12
 
         if page < 1 or page > 3:
